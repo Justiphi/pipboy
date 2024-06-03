@@ -42,13 +42,15 @@ EVENTS = {
 MODULES = {
     0: "stats",
     1: "items",
-    2: "data"
+    2: "data",
+    3: "radio"
 }
 
 ACTIONS = {
     pygame.K_F1: "module_stats",
     pygame.K_F2: "module_items",
     pygame.K_F3: "module_data",
+    pygame.K_F4: "module_radio",
     pygame.K_1:	"knob_1",
     pygame.K_2: "knob_2",
     pygame.K_3: "knob_3",
@@ -69,8 +71,8 @@ GPIO_ACTIONS = {
 	21: "module_stats", #GPIO 23
 	20: "module_items", #GPIO 24
 	26: "module_data", #GPIO 4
-	16: "module_stats", #GPIO 17
-	19: "module_items", #GPIO 17
+	16: "module_radio", #GPIO 17
+	#19: "module_radio", #GPIO 17
 }
 
 # LEDs

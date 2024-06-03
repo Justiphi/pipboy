@@ -25,8 +25,8 @@ class Engine(object):
         self.canvasSize = (config.WIDTH, config.HEIGHT)
         # ---------------------------------------------------------------
 
-        self.window = pygame.display.set_mode((width, height),pygame.FULLSCREEN)
-        #self.window = pygame.display.set_mode((width, height))
+        #self.window = pygame.display.set_mode((width, height),pygame.FULLSCREEN)
+        self.window = pygame.display.set_mode((width, height))
         self.screen = pygame.display.get_surface()
         pygame.display.set_mode(self.screenSize)
 
@@ -71,8 +71,9 @@ class Engine(object):
         self.scanLines = self.scanLines.convert_alpha()
         self.scanLines.fill(config.TINTCOLOUR, None, pygame.BLEND_RGB_MULT)
 
-        self.window = pygame.display.set_mode((width, height),pygame.FULLSCREEN)
-        
+        if config.GPIO_AVAILABLE:
+            self.window = pygame.display.set_mode((width, height),pygame.FULLSCREEN)
+
         # Start humming sound:
         if config.SOUND_ENABLED:
             if config.HUM_ENABLED:

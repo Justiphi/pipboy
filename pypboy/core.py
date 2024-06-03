@@ -7,6 +7,7 @@ from math import atan2, pi, degrees
 from pypboy.modules import data
 from pypboy.modules import items
 from pypboy.modules import stats
+from pypboy.modules import radio
 
 if config.GPIO_AVAILABLE:
     import RPi.GPIO as GPIO
@@ -46,7 +47,8 @@ class Pypboy(game.core.Engine):
         self.modules = {
             "data": data.Module(self),
             "items": items.Module(self),
-            "stats": stats.Module(self)
+            "stats": stats.Module(self),
+            "radio": radio.Module(self)
         }
         for module in self.modules.values():
             module.move(4, 40)
