@@ -71,6 +71,8 @@ class Engine(object):
         self.scanLines = self.scanLines.convert_alpha()
         self.scanLines.fill(config.TINTCOLOUR, None, pygame.BLEND_RGB_MULT)
 
+        self.window = pygame.display.set_mode((width, height),pygame.FULLSCREEN)
+        
         # Start humming sound:
         if config.SOUND_ENABLED:
             if config.HUM_ENABLED:
