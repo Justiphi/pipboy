@@ -73,9 +73,10 @@ class Engine(object):
 
         # Start humming sound:
         if config.SOUND_ENABLED:
-            self.humSound = pygame.mixer.Sound('sounds/pipboy_hum.wav')
-            self.humSound.play(loops=-1)
-            self.humVolume = self.humSound.get_volume()
+            if config.HUM_ENABLED:
+                self.humSound = pygame.mixer.Sound('sounds/pipboy_hum.wav')
+                self.humSound.play(loops=-1)
+                self.humVolume = self.humSound.get_volume()
 
             # Set up data for generating overlay frames
 

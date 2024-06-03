@@ -18,12 +18,12 @@ class Module(pypboy.SubModule):
         self.add(self.stat)
 
         self.menu = pypboy.ui.Menu(240, [
-            "Strength               4", 
-            "Perception             7", 
-            "Endurance              5", 
+            "Strength               5", 
+            "Perception             8", 
+            "Endurance              7", 
             "Charisma               6", 
             "Intelligence           9", 
-            "Agility                4", 
+            "Agility                8", 
             "Luck                   6"], [self.show_str, self.show_per, self.show_end, self.show_cha, self.show_int, self.show_agi, self.show_luc], 0)
         self.menu.rect[0] = 4
         self.menu.rect[1] = 60

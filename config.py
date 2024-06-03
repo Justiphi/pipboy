@@ -1,7 +1,7 @@
 import pygame
 
-PLAYERNAME = "Markuspwn"
-PLAYERLEVEL = 10
+PLAYERNAME = "Gary"
+PLAYERLEVEL = 108
 WIDTH = 480
 HEIGHT = 320
 
@@ -27,11 +27,13 @@ TINTCOLOUR = pygame.Color(26, 255, 128) # Green
 #MAP_FOCUS = (-118.5723894,34.3917171)#CodeNinjasValencia
 #MAP_FOCUS = (32.7157, 117.1611)
 MAP_FOCUS = (-92.1943197, 38.5653437)
+#MAP_FOCUS = (-36.8915436, 174.7786472)
 
 WORLD_MAP_FOCUS = 0.07 #Needed to handle the 50k node limit from OSM
 
 LOAD_CACHED_MAP = True
 SOUND_ENABLED = True
+HUM_ENABLED = False
 
 EVENTS = {
     'SONG_END': pygame.USEREVENT + 1
@@ -134,8 +136,8 @@ WEAPONS = [
 
 ARMOR = [
     "Eyeglasses",
-    "Vault 111 Jumpsuit",
-    "Wedding Ring"
+    "Vault 108 Jumpsuit",
+    "Leather Armour"
 ]
 
 AID = [
@@ -164,25 +166,26 @@ QUESTS = [
 ]
 
 SKILLS = [
-    "Action Boy",
-    "Animal Friend",
-    "Awareness",
-    "Gunslinger"
-    "Hacker",
-    "Mysterious Stranger",
-    "Rifleman",
-    "Science"   
+    "Small Guns",
+    "Lockpick",
+    "Sneak",   
+    "Repair",   
+    "Speech",   
+    "Gambling",   
+    "Science",
 ]
 
 PERKS = [
-    "Action Boy",
-    "Animal Friend",
     "Awareness",
-    "Gunslinger"
+    "Gunslinger",
     "Hacker",
-    "Mysterious Stranger",
-    "Rifleman",
-    "Science"   
+    "Lead Belly",
+    "Lone Wanderer",
+    "Night Person",
+    "Rad Resistant",
+    "Sneak",
+    "Sniper",
+    "Strong Back"
 ]
 
 
