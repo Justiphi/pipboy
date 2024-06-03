@@ -66,10 +66,11 @@ ACTIONS = {
 #GPIO 23 pin16 reboot
 #GPIO 25 pin 22 blank screen do not use
 GPIO_ACTIONS = {
-	4: "module_stats", #GPIO 23
-	17: "module_items", #GPIO 24
-	22: "module_data", #GPIO 4
-	27: "module_stats", #GPIO 17
+	21: "module_stats", #GPIO 23
+	20: "module_items", #GPIO 24
+	26: "module_data", #GPIO 4
+	16: "module_stats", #GPIO 17
+	19: "module_items", #GPIO 17
 }
 
 # LEDs
