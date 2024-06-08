@@ -56,17 +56,9 @@ class Pypboy(game.core.Engine):
             module.move(4, 40)
         self.switch_module("stats")
         
-    def valueChanged():
-        print("Method 1")
-        
-    def valueChanged(value):
-        print("Method 2")
-        
-    def valueChanged(value, direction):
-        print("Method 3")
-        
     def valueChanged(self, value, direction):
-        print("Method 4")
+        print(value)
+        print(direction)
 
     def init_gpio_controls(self):
         for pin in config.GPIO_ACTIONS.keys():
