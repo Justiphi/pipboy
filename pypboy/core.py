@@ -55,7 +55,8 @@ class Pypboy(game.core.Engine):
             module.move(4, 40)
         self.switch_module("stats")
         
-    def EncoderChanged(self):
+    def EncoderChanged(self, value):
+        print(value)
         self.handle_action("knob_down")
 
     def init_gpio_controls(self):
