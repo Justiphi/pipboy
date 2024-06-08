@@ -57,8 +57,10 @@ class Pypboy(game.core.Engine):
         self.switch_module("stats")
         
     def valueChanged(self, value, direction):
-        print(value)
-        print(direction)
+        if direction == "L":
+            self.handle_action("knob_up")
+        if direction == "R":
+            self.handle_action("knob_down")
 
     def init_gpio_controls(self):
         for pin in config.GPIO_ACTIONS.keys():
