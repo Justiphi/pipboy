@@ -56,6 +56,7 @@ class Pypboy(game.core.Engine):
         self.switch_module("stats")
         
     def valueChanged(self, value):
+        print("Called")
         print(value)
 
     def init_gpio_controls(self):
@@ -63,7 +64,6 @@ class Pypboy(game.core.Engine):
             print("Intialising pin %s as action '%s'" % (pin, config.GPIO_ACTIONS[pin]))
             GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
             self.gpio_actions[pin] = config.GPIO_ACTIONS[pin]
-
         enc = Encoder(12, 5, callback=self.valueChanged)
 
     def check_gpio_input(self):
