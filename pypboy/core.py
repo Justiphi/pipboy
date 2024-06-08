@@ -11,7 +11,7 @@ from pypboy.modules import radio
 
 if config.GPIO_AVAILABLE:
     import RPi.GPIO as GPIO
-    from encoder import Encoder
+    from pypboy.encoder import Encoder
 
 
 class Pypboy(game.core.Engine):
@@ -64,7 +64,7 @@ class Pypboy(game.core.Engine):
             GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
             self.gpio_actions[pin] = config.GPIO_ACTIONS[pin]
 
-        enc = encoder(6, 12, callback=EncoderChanged)
+        enc = Encoder(6, 12, callback=EncoderChanged)
 
     def check_gpio_input(self):
         for pin in self.gpio_actions.keys():
