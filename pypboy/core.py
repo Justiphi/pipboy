@@ -11,7 +11,7 @@ from pypboy.modules import radio
 
 if config.GPIO_AVAILABLE:
     import RPi.GPIO as GPIO
-    import Encoder.encoder
+    import Encoder
 
 
 class Pypboy(game.core.Engine):
