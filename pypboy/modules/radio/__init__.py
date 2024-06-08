@@ -8,7 +8,6 @@ if config.GPIO_AVAILABLE:
 class Module(BaseModule):
 
     label = "RADIO"
-    GPIO_LED_ID = 24
 
     def __init__(self, *args, **kwargs):
         

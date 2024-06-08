@@ -11,14 +11,13 @@ if config.GPIO_AVAILABLE:
 class Module(BaseModule):
 
     label = "DATA"
-    GPIO_LED_ID = 24
 
     def __init__(self, *args, **kwargs):
         
         self.submodules = [
+            quests.Module(self),
             local_map.Module(self),
             world_map.Module(self),
-            quests.Module(self),
             misc.Module(self)
         ]
         super(Module, self).__init__(*args, **kwargs)

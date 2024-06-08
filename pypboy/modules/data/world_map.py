@@ -7,7 +7,7 @@ from pypboy.modules.data import entities
 
 class Module(pypboy.SubModule):
     label = "World Map"
-    title = "Jefferson City"
+    title = "Auckland"
 
     def __init__(self, *args, **kwargs):
         super(Module, self).__init__(*args, **kwargs)

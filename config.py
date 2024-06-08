@@ -12,8 +12,8 @@ touchScale = 1
 invertPosition = False
 GPIO_AVAILABLE = True
 RADIO_PLAYING = False
-QUICKLOAD = False
-LOAD_CACHED_MAP = True
+QUICKLOAD = True
+LOAD_CACHED_MAP = False
 # Main
 
 TINTCOLOUR = pygame.Color(26, 255, 128) # Green
@@ -26,12 +26,11 @@ TINTCOLOUR = pygame.Color(26, 255, 128) # Green
 #MAP_FOCUS = (-102.3016145, 21.8841274) #Old Default?
 #MAP_FOCUS = (-118.5723894,34.3917171)#CodeNinjasValencia
 #MAP_FOCUS = (32.7157, 117.1611)
-MAP_FOCUS = (-92.1943197, 38.5653437)
-#MAP_FOCUS = (-36.8915436, 174.7786472)
+#MAP_FOCUS = (-92.1943197, 38.5653437)
+MAP_FOCUS = (174.78073, -36.8915436)
 
-WORLD_MAP_FOCUS = 0.07 #Needed to handle the 50k node limit from OSM
+WORLD_MAP_FOCUS = 0.005 #Needed to handle the 50k node limit from OSM
 
-LOAD_CACHED_MAP = True
 SOUND_ENABLED = True
 HUM_ENABLED = False
 
@@ -68,11 +67,15 @@ ACTIONS = {
 #GPIO 23 pin16 reboot
 #GPIO 25 pin 22 blank screen do not use
 GPIO_ACTIONS = {
-	21: "module_stats", #GPIO 23
-	20: "module_items", #GPIO 24
-	26: "module_data", #GPIO 4
-	16: "module_radio", #GPIO 17
-	#19: "module_radio", #GPIO 17
+	21: "module_stats", #Pin 40
+	20: "module_items", #Pin 38
+	26: "module_data", #Pin 37
+	16: "module_radio", #Pin 36
+	19: "module_radio", #Pin 35
+
+    #13: "knob_up", #pin 33 reserved for encoder
+    #12: "knob_down", #pin 32 reserved for encoder
+    6: "button_press" #Pin 31
 }
 
 # LEDs

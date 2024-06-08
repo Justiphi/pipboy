@@ -11,6 +11,7 @@ from pypboy.modules import radio
 
 if config.GPIO_AVAILABLE:
     import RPi.GPIO as GPIO
+    import Encoder.encoder
 
 
 class Pypboy(game.core.Engine):
@@ -43,7 +44,7 @@ class Pypboy(game.core.Engine):
         self.header = pypboy.ui.Header()
         self.root_children.add(self.header)
 
-    def init_modules(self):
+    def init_modules(self, value):
         self.modules = {
             "data": data.Module(self),
             "items": items.Module(self),
@@ -53,12 +54,17 @@ class Pypboy(game.core.Engine):
         for module in self.modules.values():
             module.move(4, 40)
         self.switch_module("stats")
+        
+    def EncoderChanged(self):
+        self.handle_action("knob_down")
 
     def init_gpio_controls(self):
         for pin in config.GPIO_ACTIONS.keys():
             print("Intialising pin %s as action '%s'" % (pin, config.GPIO_ACTIONS[pin]))
             GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
             self.gpio_actions[pin] = config.GPIO_ACTIONS[pin]
+
+        enc = Encoder(6, 12, callback=EncoderChanged)
 
     def check_gpio_input(self):
         for pin in self.gpio_actions.keys():
