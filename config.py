@@ -73,9 +73,9 @@ GPIO_ACTIONS = {
 	16: "module_radio", #Pin 36
 	19: "module_radio", #Pin 35
 
-    #13: "knob_up", #pin 33 reserved for encoder
+    #6: "knob_up", #pin 31 reserved for encoder
     #12: "knob_down", #pin 32 reserved for encoder
-    6: "button_press" #Pin 31
+    13: "button_press" #Pin 33
 }
 
 # LEDs
