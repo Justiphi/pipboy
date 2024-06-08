@@ -6,6 +6,7 @@ from enum import Enum
 
 if config.GPIO_AVAILABLE:
     import RPi.GPIO as GPIO
+    import encoder
 
 
 class GameState(Enum):
