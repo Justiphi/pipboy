@@ -13,7 +13,7 @@ invertPosition = False
 GPIO_AVAILABLE = True
 RADIO_PLAYING = False
 QUICKLOAD = True
-LOAD_CACHED_MAP = False
+LOAD_CACHED_MAP = True
 # Main
 
 TINTCOLOUR = pygame.Color(26, 255, 128) # Green
