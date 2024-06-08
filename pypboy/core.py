@@ -57,15 +57,10 @@ class Pypboy(game.core.Engine):
         self.switch_module("stats")
         
     def valueChanged(self, value, direction):
-        print("Called")
-        print(value)
-        print(direction)
-        self.switch_module("stats")
-        
-    def valueChanged(value, direction):
-        print("Called")
-        print(value)
-        print(direction)
+        if direction == "R":
+            self.switch_module("stats")
+        else:
+            self.switch_module("radio")
 
     def init_gpio_controls(self):
         for pin in config.GPIO_ACTIONS.keys():
