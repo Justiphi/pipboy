@@ -17,6 +17,7 @@ if config.GPIO_AVAILABLE:
 class Pypboy(game.core.Engine):
 
     currentModule = 0
+    enc = None
 
     def __init__(self, *args, **kwargs):
         if hasattr(config, 'OUTPUT_WIDTH') and hasattr(config, 'OUTPUT_HEIGHT'):
@@ -59,6 +60,12 @@ class Pypboy(game.core.Engine):
         print("Called")
         print(value)
         print(direction)
+        self.switch_module("stats")
+        
+    def valueChanged(value, direction):
+        print("Called")
+        print(value)
+        print(direction)
 
     def init_gpio_controls(self):
         for pin in config.GPIO_ACTIONS.keys():
@@ -66,7 +73,6 @@ class Pypboy(game.core.Engine):
             GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
             self.gpio_actions[pin] = config.GPIO_ACTIONS[pin]
         enc = Encoder(12, 5, callback=self.valueChanged)
-        print("test")
 
     def check_gpio_input(self):
         for pin in self.gpio_actions.keys():
