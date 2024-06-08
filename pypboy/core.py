@@ -44,7 +44,7 @@ class Pypboy(game.core.Engine):
         self.header = pypboy.ui.Header()
         self.root_children.add(self.header)
 
-    def init_modules(self, value):
+    def init_modules(self):
         self.modules = {
             "data": data.Module(self),
             "items": items.Module(self),
