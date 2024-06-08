@@ -3,7 +3,7 @@
 
 import RPi.GPIO as GPIO
 
-class Encoder:
+class encoder:
 
     def __init__(self, leftPin, rightPin, callback=None):
         self.leftPin = leftPin
