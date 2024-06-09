@@ -18,7 +18,6 @@ class Module(BaseModule):
             quests.Module(self),
             local_map.Module(self),
             world_map.Module(self),
-            misc.Module(self)
         ]
         super(Module, self).__init__(*args, **kwargs)
         
