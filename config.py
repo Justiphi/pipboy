@@ -42,14 +42,16 @@ MODULES = {
     0: "stats",
     1: "items",
     2: "data",
-    3: "radio"
+    3: "map",
+    4: "radio"
 }
 
 ACTIONS = {
     pygame.K_F1: "module_stats",
     pygame.K_F2: "module_items",
     pygame.K_F3: "module_data",
-    pygame.K_F4: "module_radio",
+    pygame.K_F4: "module_map",
+    pygame.K_F5: "module_radio",
     pygame.K_1:	"knob_1",
     pygame.K_2: "knob_2",
     pygame.K_3: "knob_3",
@@ -70,7 +72,7 @@ GPIO_ACTIONS = {
 	21: "module_stats", #Pin 40
 	20: "module_items", #Pin 38
 	26: "module_data", #Pin 37
-	16: "module_radio", #Pin 36
+	16: "module_map", #Pin 36
 	19: "module_radio", #Pin 35
 
     #6: "knob_up", #pin 31 reserved for encoder

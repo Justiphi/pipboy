@@ -1,5 +1,6 @@
 from pypboy import BaseModule
-from pypboy.modules.data import quests
+from pypboy.modules.map import local_map
+from pypboy.modules.map import world_map
 import config
 
 if config.GPIO_AVAILABLE:
@@ -7,17 +8,18 @@ if config.GPIO_AVAILABLE:
 
 class Module(BaseModule):
 
-    label = "DATA"
+    label = "MAP"
 
     def __init__(self, *args, **kwargs):
         
         self.submodules = [
-            quests.Module(self)
+            local_map.Module(self),
+            world_map.Module(self),
         ]
         super(Module, self).__init__(*args, **kwargs)
         
     def handle_resume(self):
         self.pypboy.header.headline = self.label
-        self.pypboy.header.title = ["Armageddon"]
+        self.pypboy.header.title = ["Map"]
         self.active.handle_action("resume")
         

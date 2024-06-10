@@ -50,6 +50,7 @@ class Pypboy(game.core.Engine):
             "data": data.Module(self),
             "items": items.Module(self),
             "stats": stats.Module(self),
+            "map": map.Module(self),
             "radio": radio.Module(self)
         }
         for module in self.modules.values():
