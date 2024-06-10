@@ -1,7 +1,7 @@
 import pypboy
 import config
 
-from pypboy.modules.data import entities
+from pypboy.modules.radio import entities
 
 
 class Module(pypboy.SubModule):

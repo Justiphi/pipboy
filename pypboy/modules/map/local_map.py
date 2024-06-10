@@ -2,7 +2,7 @@ import pygame
 import pypboy
 import config
 
-from pypboy.modules.data import entities
+from pypboy.modules.map import entities
 
 class Module(pypboy.SubModule):
     label = "Local Map"
@@ -31,7 +31,7 @@ class Module(pypboy.SubModule):
             self.zoomMap(0.003)
 
     def handle_resume(self):
-        self.parent.pypboy.header.headline = "DATA"
+        self.parent.pypboy.header.headline = "MAP"
         self.parent.pypboy.header.title = [self.title]
         super(Module, self).handle_resume()
 
@@ -54,6 +54,6 @@ class Module(pypboy.SubModule):
         self.add(self.mapgrid)
         self.mapgrid.rect[0] = 4
         self.mapgrid.rect[1] = 40
-        self.parent.pypboy.header.headline = "DATA"
+        self.parent.pypboy.header.headline = "MAP"
         self.parent.pypboy.header.title = [self.title]
     

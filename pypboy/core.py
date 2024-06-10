@@ -8,6 +8,7 @@ from pypboy.modules import data
 from pypboy.modules import items
 from pypboy.modules import stats
 from pypboy.modules import radio
+from pypboy.modules import map
 
 if config.GPIO_AVAILABLE:
     import RPi.GPIO as GPIO
