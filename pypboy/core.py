@@ -99,8 +99,6 @@ class Pypboy(game.core.Engine):
         for pin in self.gpio_actions.keys():
             if GPIO.input(pin) == False:
                 self.handle_action(self.gpio_actions[pin])
-            if(GPIO.input(20) == True):
-                print("Button2")
 
     def update(self):
         if hasattr(self, 'active'):
