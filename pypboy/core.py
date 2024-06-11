@@ -3,6 +3,8 @@ import config
 import game
 import pypboy.ui
 from math import atan2, pi, degrees
+from datetime import datetime
+from datetime import timedelta
 
 from pypboy.modules import data
 from pypboy.modules import items
@@ -19,6 +21,7 @@ class Pypboy(game.core.Engine):
 
     currentModule = 0
     enc = None
+    lastChange = datetime.datetime.now
 
     def __init__(self, *args, **kwargs):
         if hasattr(config, 'OUTPUT_WIDTH') and hasattr(config, 'OUTPUT_HEIGHT'):
@@ -59,6 +62,10 @@ class Pypboy(game.core.Engine):
         self.switch_module("stats")
         
     def valueChanged(self, value, direction):
+        if self.lastChange < datetime.now:
+            return
+        self.lastChange = datetime.now + timedelta(milliseconds=250)
+
         if self.currentModule == config.MODULES["radio"]:
             if direction == "L":
                 self.handle_action("dial_up")
