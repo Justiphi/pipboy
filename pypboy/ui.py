@@ -114,25 +114,29 @@ class Menu(game.Entity):
                 print('up')
                 if self.selected > 0:
                     if config.SOUND_ENABLED:
-                        self.dial_move_sfx.play()
+                        pass
+                        #self.dial_move_sfx.play()
                     self.select(self.selected - 1)
             if action == "dial_down":
                 print('down')
                 if self.selected < len(self.items) - 1:
                     if config.SOUND_ENABLED:
-                        self.dial_move_sfx.play()
+                        pass
+                        #self.dial_move_sfx.play()
                     self.select(self.selected + 1)
 
         else:
             if action == "dial_up":
                 if self.selected > 0:
                     if config.SOUND_ENABLED:
-                        self.dial_move_sfx.play()
+                        pass
+                        #self.dial_move_sfx.play()
                     self.select(self.selected - 1)
             if action == "dial_down":
                 if self.selected < len(self.items) - 1:
                     if config.SOUND_ENABLED:
-                        self.dial_move_sfx.play()
+                        pass
+                        #self.dial_move_sfx.play()
                     self.select(self.selected + 1)
 
 
