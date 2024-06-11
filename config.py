@@ -11,7 +11,7 @@ longPressTime = 200
 touchScale = 1
 invertPosition = False
 GPIO_AVAILABLE = True
-RADIO_PLAYING = False
+RADIO_PLAYING = True
 QUICKLOAD = True
 LOAD_CACHED_MAP = True
 # Main
@@ -69,11 +69,18 @@ ACTIONS = {
 #GPIO 23 pin16 reboot
 #GPIO 25 pin 22 blank screen do not use
 GPIO_ACTIONS = {
-	21: "module_stats", #Pin 40
-	20: "module_items", #Pin 38
-	26: "module_data", #Pin 37
-	16: "module_map", #Pin 36
-	19: "module_radio", #Pin 35
+    ##       OLD LAYOUT       ##
+	# 21: "module_stats", #Pin 40
+	# 20: "module_items", #Pin 38
+	# 26: "module_data", #Pin 37
+	# 16: "module_map", #Pin 36
+	# 19: "module_radio", #Pin 35
+
+	26: "module_stats", #Pin 37
+	19: "module_items", #Pin 35
+	13: "module_data", #Pin 33
+	6: "module_map", #Pin 31
+	5: "module_radio", #Pin 29
 
     #6: "knob_up", #pin 31 reserved for encoder
     #12: "knob_down", #pin 32 reserved for encoder
