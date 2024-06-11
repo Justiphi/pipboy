@@ -52,7 +52,7 @@ class Module(pypboy.SubModule):
                 self.active_station.play_random()
 
     def handle_resume(self):
-        self.parent.pypboy.header.headline = "DATA"
+        self.parent.pypboy.header.headline = "RADIO"
         self.parent.pypboy.header.title = ["Radio"]
         super(Module, self).handle_resume()
 
