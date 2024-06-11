@@ -21,7 +21,7 @@ class Pypboy(game.core.Engine):
 
     currentModule = 0
     enc = None
-    lastChange = datetime.datetime.now
+    lastChange = datetime.now
 
     def __init__(self, *args, **kwargs):
         if hasattr(config, 'OUTPUT_WIDTH') and hasattr(config, 'OUTPUT_HEIGHT'):
