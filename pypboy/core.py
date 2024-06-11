@@ -69,6 +69,9 @@ class Pypboy(game.core.Engine):
         #     return
         # self.lastChange = datetime.now + timedelta(milliseconds=250)
 
+        print("success")
+        print(direction)
+
         if direction == "L":
             self.handle_action("knob_up")
         if direction == "R":
