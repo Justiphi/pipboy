@@ -21,7 +21,7 @@ class Pypboy(game.core.Engine):
 
     currentModule = 0
     enc = None
-    lastChange = datetime.now
+    lastChange = datetime.now()
     GPIO_LED_ID = 21
 
     def __init__(self, *args, **kwargs):
@@ -52,7 +52,7 @@ class Pypboy(game.core.Engine):
         self.header = pypboy.ui.Header()
         self.root_children.add(self.header)
 
-    def init_modules(self):
+    def init_modules(self):        
         self.modules = {
             "data": data.Module(self),
             "items": items.Module(self),
@@ -65,25 +65,25 @@ class Pypboy(game.core.Engine):
         self.switch_module("stats")
         
     def valueChanged(self, value, direction):
-        # if self.lastChange < datetime.now:
-        #     return
-        # self.lastChange = datetime.now + timedelta(milliseconds=250)
+        if self.lastChange < datetime.now():
+            return
+        self.lastChange = datetime.now() + timedelta(milliseconds=250)
 
-        if direction == "L":
-            self.handle_action("knob_up")
-        if direction == "R":
-            self.handle_action("knob_down")
+        # if direction == "L":
+        #     self.handle_action("knob_up")
+        # if direction == "R":
+        #     self.handle_action("knob_down")
 
-        # if self.currentModule == config.MODULES["radio"]:
-        #     if direction == "L":
-        #         self.handle_action("dial_up")
-        #     if direction == "R":
-        #         self.handle_action("dial_down")
-        # else:
-        #     if direction == "L":
-        #         self.handle_action("knob_up")
-        #     if direction == "R":
-        #         self.handle_action("knob_down")
+        if self.currentModule == config.MODULES["radio"]:
+            if direction == "L":
+                self.handle_action("dial_up")
+            if direction == "R":
+                self.handle_action("dial_down")
+        else:
+            if direction == "L":
+                self.handle_action("knob_up")
+            if direction == "R":
+                self.handle_action("knob_down")
 
     def init_gpio_controls(self):
         for pin in config.GPIO_ACTIONS.keys():
