@@ -85,7 +85,7 @@ class Pypboy(game.core.Engine):
             print("Intialising pin %s as action '%s'" % (pin, config.GPIO_ACTIONS[pin]))
             GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
             self.gpio_actions[pin] = config.GPIO_ACTIONS[pin]
-        enc = Encoder(16, 12, callback=self.valueChanged)
+        enc = Encoder(12, 16, callback=self.valueChanged)
 
     def check_gpio_input(self):
         for pin in self.gpio_actions.keys():
