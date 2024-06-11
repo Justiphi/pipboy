@@ -22,6 +22,7 @@ class Pypboy(game.core.Engine):
     currentModule = 0
     enc = None
     lastChange = datetime.now
+    GPIO_LED_ID = 21
 
     def __init__(self, *args, **kwargs):
         if hasattr(config, 'OUTPUT_WIDTH') and hasattr(config, 'OUTPUT_HEIGHT'):
@@ -33,6 +34,8 @@ class Pypboy(game.core.Engine):
         self.gpio_actions = {}
         if config.GPIO_AVAILABLE:
             self.init_gpio_controls()
+            GPIO.setup(self.GPIO_LED_ID, GPIO.OUT)
+            GPIO.output(self.GPIO_LED_ID, GPIO.HIGH)
 
     def init_children(self):
         self.background = pygame.image.load('images/overlay.png').convert_alpha()
