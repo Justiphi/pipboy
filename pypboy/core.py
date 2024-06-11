@@ -65,9 +65,9 @@ class Pypboy(game.core.Engine):
         self.switch_module("stats")
         
     def valueChanged(self, value, direction):
-        if self.lastChange < datetime.now:
-            return
-        self.lastChange = datetime.now + timedelta(milliseconds=250)
+        # if self.lastChange < datetime.now:
+        #     return
+        # self.lastChange = datetime.now + timedelta(milliseconds=250)
 
         if self.currentModule == config.MODULES["radio"]:
             if direction == "L":
@@ -85,7 +85,7 @@ class Pypboy(game.core.Engine):
             print("Intialising pin %s as action '%s'" % (pin, config.GPIO_ACTIONS[pin]))
             GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
             self.gpio_actions[pin] = config.GPIO_ACTIONS[pin]
-        enc = Encoder(20, 21, callback=self.valueChanged)
+        enc = Encoder(20, 16, callback=self.valueChanged)
 
     def check_gpio_input(self):
         for pin in self.gpio_actions.keys():
