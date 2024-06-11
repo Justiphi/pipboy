@@ -69,16 +69,21 @@ class Pypboy(game.core.Engine):
         #     return
         # self.lastChange = datetime.now + timedelta(milliseconds=250)
 
-        if self.currentModule == config.MODULES["radio"]:
-            if direction == "L":
-                self.handle_action("dial_up")
-            if direction == "R":
-                self.handle_action("dial_down")
-        else:
-            if direction == "L":
-                self.handle_action("knob_up")
-            if direction == "R":
-                self.handle_action("knob_down")
+        if direction == "L":
+            self.handle_action("knob_up")
+        if direction == "R":
+            self.handle_action("knob_down")
+
+        # if self.currentModule == config.MODULES["radio"]:
+        #     if direction == "L":
+        #         self.handle_action("dial_up")
+        #     if direction == "R":
+        #         self.handle_action("dial_down")
+        # else:
+        #     if direction == "L":
+        #         self.handle_action("knob_up")
+        #     if direction == "R":
+        #         self.handle_action("knob_down")
 
     def init_gpio_controls(self):
         for pin in config.GPIO_ACTIONS.keys():
