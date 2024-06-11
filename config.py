@@ -11,7 +11,7 @@ longPressTime = 200
 touchScale = 1
 invertPosition = False
 GPIO_AVAILABLE = True
-RADIO_PLAYING = True
+RADIO_PLAYING = False
 QUICKLOAD = True
 LOAD_CACHED_MAP = True
 # Main
@@ -31,7 +31,7 @@ MAP_FOCUS = (174.78073, -36.8915436)
 
 WORLD_MAP_FOCUS = 0.005 #Needed to handle the 50k node limit from OSM
 
-SOUND_ENABLED = True
+SOUND_ENABLED = False
 HUM_ENABLED = False
 
 EVENTS = {
@@ -84,7 +84,7 @@ GPIO_ACTIONS = {
 
     #16: "knob_up", #pin 36 reserved for encoder
     #20: "knob_down", #pin 38 reserved for encoder
-    12: "button_press" #Pin 32
+    20: "button_press" #Pin 32
 }
 
 # LEDs
