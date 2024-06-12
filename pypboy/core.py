@@ -65,7 +65,7 @@ class Pypboy(game.core.Engine):
         self.switch_module("stats")
         
     def valueChanged(self, value, direction):
-        if self.lastChange < datetime.now():
+        if self.lastChange > datetime.now():
             print("skip")
             return
         self.lastChange = datetime.now() + timedelta(milliseconds=250)
