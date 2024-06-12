@@ -74,6 +74,8 @@ class Pypboy(game.core.Engine):
         # if direction == "R":
         #     self.handle_action("knob_down")
 
+        print(direction)
+
         if self.currentModule == config.MODULES["radio"]:
             if direction == "L":
                 self.handle_action("dial_up")
