@@ -143,8 +143,6 @@ class Pypboy(game.core.Engine):
     def handle_action(self, action):
         if action.startswith('module_'):
             self.switch_module(action[7:])
-        if action.startswith('knob_'):
-            self.switch_module(action[7:])
         elif action.startswith('button'):
             print("button")
         else:
