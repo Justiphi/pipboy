@@ -31,7 +31,7 @@ MAP_FOCUS = (174.78073, -36.8915436)
 
 WORLD_MAP_FOCUS = 0.005 #Needed to handle the 50k node limit from OSM
 
-SOUND_ENABLED = False
+SOUND_ENABLED = True
 HUM_ENABLED = False
 
 EVENTS = {

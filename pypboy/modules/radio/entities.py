@@ -57,6 +57,7 @@ class RadioStation(game.Entity):
                 self.last_playpos = pygame.mixer.music.get_pos()
                 self.last_playtime = time.time()
             pygame.mixer.music.stop()
+            print("Test2")
 
     def load_files(self):
         files = []
