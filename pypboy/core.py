@@ -68,10 +68,8 @@ class Pypboy(game.core.Engine):
         if self.lastChange > datetime.now():
             return
         self.lastChange = datetime.now() + timedelta(milliseconds=250)
-
-        print(self.currentModule)
-        print(config.MODULES["radio"])
-        if self.currentModule == config.MODULES["radio"]:
+        
+        if GPIO.input(5) == False:
             if direction == "L":
                 self.handle_action("dial_up")
             if direction == "R":
