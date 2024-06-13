@@ -162,13 +162,13 @@ class SubModule(game.EntityGroup):
     def handle_pause(self):
         self.paused = True
 
-    def handle_resume(self):
-        if self.paused == False:
-            return
-        self.paused = False
-        if config.SOUND_ENABLED:
-            print("Resume Sound")
-            self.submodule_change_sfx.play()
+    # def handle_resume(self):
+    #     if self.paused == False:
+    #         return
+    #     self.paused = False
+    #     if config.SOUND_ENABLED:
+    #         print("Resume Sound")
+    #         self.submodule_change_sfx.play()
 
     def handle_tap(self):
         pass
