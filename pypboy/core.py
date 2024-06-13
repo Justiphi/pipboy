@@ -137,7 +137,8 @@ class Pypboy(game.core.Engine):
                 self.lastModule = action
                 self.switch_module(action[7:])
         elif action.startswith('button'):
-            print("button")
+            if GPIO.input(5) == False:
+                self.active.handle_tap()
         else:
             if hasattr(self, 'active'):
                 self.active.handle_action(action)
