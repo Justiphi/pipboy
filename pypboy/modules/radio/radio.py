@@ -51,8 +51,7 @@ class Module(pypboy.SubModule):
 
     def stop_radio(self):
         if hasattr(self, 'active_station') and self.active_station:
-            print("test")
-            self.active_station.stop()
+            self.active_station.pause()
 
     def handle_event(self, event):
         if event.type == config.EVENTS['SONG_END']:
