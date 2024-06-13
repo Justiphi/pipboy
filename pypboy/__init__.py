@@ -112,8 +112,8 @@ class BaseModule(game.EntityGroup):
         self.switch_submodule(0)
         # if config.GPIO_AVAILABLE:
         #     GPIO.output(self.GPIO_LED_ID, GPIO.HIGH)
-        # if config.SOUND_ENABLED:
-        #     self.module_change_sfx.play()
+        if config.SOUND_ENABLED:
+            self.module_change_sfx.play()
 
     def handle_swipe(self, swipe):
         print("Handle Swipe " + str(swipe))

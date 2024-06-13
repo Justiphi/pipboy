@@ -111,6 +111,7 @@ class Pypboy(game.core.Engine):
 
     def switch_module(self, module):
         if module in self.modules:
+            print("Switch")
             if hasattr(self, 'active'):
                 self.active.handle_action("pause")
                 self.remove(self.active)
