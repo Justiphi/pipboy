@@ -70,24 +70,25 @@ class Pypboy(game.core.Engine):
             return
         self.lastChange = datetime.now() + timedelta(milliseconds=250)
 
-        # if direction == "L":
-        #     self.handle_action("knob_up")
-        # if direction == "R":
-        #     self.handle_action("knob_down")
+        print("knob")
+        if direction == "L":
+            self.handle_action("knob_up")
+        if direction == "R":
+            self.handle_action("knob_down")
 
         print(direction)
 
-        if self.currentModule == config.MODULES["radio"]:
-            if direction == "L":
-                self.handle_action("dial_up")
-            if direction == "R":
-                self.handle_action("dial_down")
-        else:
-            print("knob")
-            if direction == "L":
-                self.handle_action("knob_up")
-            if direction == "R":
-                self.handle_action("knob_down")
+        # if self.currentModule == config.MODULES["radio"]:
+        #     if direction == "L":
+        #         self.handle_action("dial_up")
+        #     if direction == "R":
+        #         self.handle_action("dial_down")
+        # else:
+        #     print("knob")
+        #     if direction == "L":
+        #         self.handle_action("knob_up")
+        #     if direction == "R":
+        #         self.handle_action("knob_down")
 
     def init_gpio_controls(self):
         for pin in config.GPIO_ACTIONS.keys():
@@ -141,6 +142,8 @@ class Pypboy(game.core.Engine):
 
     def handle_action(self, action):
         if action.startswith('module_'):
+            self.switch_module(action[7:])
+        if action.startswith('knob_'):
             self.switch_module(action[7:])
         elif action.startswith('button'):
             print("button")
