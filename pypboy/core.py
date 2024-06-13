@@ -71,9 +71,9 @@ class Pypboy(game.core.Engine):
         self.lastChange = datetime.now() + timedelta(milliseconds=250)
 
         if direction == "L":
-            self.handle_action("knob_down")
-        if direction == "R":
             self.handle_action("knob_up")
+        if direction == "R":
+            self.handle_action("knob_down")
 
         # if self.currentModule == config.MODULES["radio"]:
         #     if direction == "L":
