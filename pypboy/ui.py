@@ -148,7 +148,6 @@ class Menu(game.Entity):
             offset += text.get_size()[1] + 6
         
     def handle_tap(self):
-        print("Handle Tap")
         if config.RADIO_PLAYING:
             config.RADIO_PLAYING = False
         else:

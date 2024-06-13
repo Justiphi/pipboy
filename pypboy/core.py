@@ -138,7 +138,10 @@ class Pypboy(game.core.Engine):
                 self.switch_module(action[7:])
         elif action.startswith('button'):
             if GPIO.input(5) == False:
-                self.active.handle_tap()
+                if config.RADIO_PLAYING:
+                    config.RADIO_PLAYING = False
+                else:
+                    config.RADIO_PLAYING = True
         else:
             if hasattr(self, 'active'):
                 self.active.handle_action(action)
