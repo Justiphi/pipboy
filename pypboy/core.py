@@ -111,7 +111,6 @@ class Pypboy(game.core.Engine):
 
     def switch_module(self, module):
         if module in self.modules:
-            print("Switch")
             if hasattr(self, 'active'):
                 self.active.handle_action("pause")
                 self.remove(self.active)
@@ -138,9 +137,12 @@ class Pypboy(game.core.Engine):
         else:
             self.active.handle_swipe(swipe)
 
+    lastModule = ""
     def handle_action(self, action):
         if action.startswith('module_'):
-            self.switch_module(action[7:])
+            if action != lastModule:
+                lastModule = action
+                self.switch_module(action[7:])
         elif action.startswith('button'):
             print("button")
         else:
