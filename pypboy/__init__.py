@@ -78,12 +78,10 @@ class BaseModule(game.EntityGroup):
                 # NEEDS TWEAKING: GLITCHY INTERFACE EXPERIENCE WITH KNOB
                 if action.startswith("knob_"):
                     if action == "knob_down":
-                        print("down")
                         self.currentSubmodule -= 1
                         if self.currentSubmodule < 0:
                             self.currentSubmodule = 0
                     if action == "knob_up":
-                        print("up")
                         if self.currentSubmodule > self.submodules.__len__():
                             self.currentSubmodule = self.submodules.__len__()
                         else:
