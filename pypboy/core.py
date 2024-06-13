@@ -140,8 +140,8 @@ class Pypboy(game.core.Engine):
     lastModule = ""
     def handle_action(self, action):
         if action.startswith('module_'):
-            if action != lastModule:
-                lastModule = action
+            if action != self.lastModule:
+                self.lastModule = action
                 self.switch_module(action[7:])
         elif action.startswith('button'):
             print("button")
