@@ -41,8 +41,8 @@ class BaseModule(game.EntityGroup):
             "pause": self.handle_pause,
             "resume": self.handle_resume
         }
-        if config.SOUND_ENABLED:
-            self.module_change_sfx = pygame.mixer.Sound('sounds/module_change.ogg')
+        #if config.SOUND_ENABLED:
+        #    self.module_change_sfx = pygame.mixer.Sound('sounds/module_change.ogg')
 
     def move(self, x, y):
         super(BaseModule, self).move(x, y)
