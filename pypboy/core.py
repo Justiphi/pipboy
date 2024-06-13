@@ -83,6 +83,7 @@ class Pypboy(game.core.Engine):
             if direction == "R":
                 self.handle_action("dial_down")
         else:
+            print("knob")
             if direction == "L":
                 self.handle_action("knob_up")
             if direction == "R":
