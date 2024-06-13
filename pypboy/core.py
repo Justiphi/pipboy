@@ -69,7 +69,7 @@ class Pypboy(game.core.Engine):
             return
         self.lastChange = datetime.now() + timedelta(milliseconds=250)
         
-        if GPIO.input(5) == False:
+        if GPIO.input(5) == False or GPIO.input(20) == False:
             if direction == "L":
                 self.handle_action("dial_up")
             if direction == "R":
