@@ -142,7 +142,7 @@ class Pypboy(game.core.Engine):
                     config.RADIO_PLAYING = False
                 else:
                     config.RADIO_PLAYING = True
-                config.radio.handle_tap()
+                    config.radio.play_radio()
         else:
             if hasattr(self, 'active'):
                 self.active.handle_action(action)

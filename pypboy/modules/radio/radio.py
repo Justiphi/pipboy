@@ -46,6 +46,9 @@ class Module(pypboy.SubModule):
             self.active_station = self.stations[station]
             self.active_station.play_random()
 
+    def play_radio(self):
+        self.select_station(self.menu)
+
     def handle_event(self, event):
         if event.type == config.EVENTS['SONG_END']:
             if hasattr(self, 'active_station') and self.active_station:
