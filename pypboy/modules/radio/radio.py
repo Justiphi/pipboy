@@ -43,7 +43,6 @@ class Module(pypboy.SubModule):
             self.active_station.pause()
 
         if config.RADIO_PLAYING:
-            print("Test")
             self.active_station = self.stations[station]
             self.active_station.play_random()
 
