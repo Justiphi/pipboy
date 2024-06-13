@@ -144,7 +144,7 @@ class SubModule(game.EntityGroup):
 
         if config.SOUND_ENABLED:
             print("init sound")
-            self.submodule_change_sfx = pygame.mixer.Sound('sounds/submodule_change.ogg')
+            #self.submodule_change_sfx = pygame.mixer.Sound('sounds/submodule_change.ogg')
 
     def handle_action(self, action, value=0):
         if action.startswith("dial_"):
