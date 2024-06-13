@@ -138,6 +138,7 @@ class Pypboy(game.core.Engine):
                 self.switch_module(action[7:])
         elif action.startswith('button'):
             if GPIO.input(5) == False:
+                print(config.RADIO_PLAYING)
                 if config.RADIO_PLAYING:
                     config.RADIO_PLAYING = False
                     config.radio.stop_radio()
