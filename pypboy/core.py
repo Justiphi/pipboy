@@ -141,7 +141,6 @@ class Pypboy(game.core.Engine):
             if self.lastPress > datetime.now():
                 return
             self.lastPress = datetime.now() + timedelta(milliseconds=250)
-            print(config.RADIO_PLAYING)
             if GPIO.input(5) == False:
                 if config.RADIO_PLAYING:
                     config.radio.stop_radio()
