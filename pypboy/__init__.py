@@ -52,10 +52,7 @@ class BaseModule(game.EntityGroup):
     def switch_submodule(self, module):
         if hasattr(self, 'active') and self.active:
             self.active.handle_action("pause")
-            try:
-                self.remove(self.active)
-            except:
-                pass
+            self.remove(self.active)
         if len(self.submodules) > module:
             self.active = self.submodules[module]
             self.active.parent = self
@@ -162,13 +159,13 @@ class SubModule(game.EntityGroup):
     def handle_pause(self):
         self.paused = True
 
-    # def handle_resume(self):
-    #     if self.paused == False:
-    #         return
-    #     self.paused = False
-    #     if config.SOUND_ENABLED:
-    #         print("Resume Sound")
-    #         self.submodule_change_sfx.play()
+    def handle_resume(self):
+        if self.paused == False:
+            return
+        self.paused = False
+        if config.SOUND_ENABLED:
+            print("Resume Sound")
+            self.submodule_change_sfx.play()
 
     def handle_tap(self):
         pass
