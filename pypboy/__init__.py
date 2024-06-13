@@ -163,6 +163,8 @@ class SubModule(game.EntityGroup):
         self.paused = True
 
     def handle_resume(self):
+        if self.paused == False:
+            return
         self.paused = False
         if config.SOUND_ENABLED:
             print("Resume Sound")
