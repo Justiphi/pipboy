@@ -119,13 +119,13 @@ class Pypboy(game.core.Engine):
             return
         if swipe == 4: #UP
             self.currentModule += 1
-            if self.currentModule > 2:
+            if self.currentModule > 4:
                 self.currentModule = 0
             self.switch_module(config.MODULES[self.currentModule])
         elif swipe == 3: #DOWN
             self.currentModule -= 1
             if self.currentModule < 0:
-                self.currentModule = 2
+                self.currentModule = 4
             self.switch_module(config.MODULES[self.currentModule])
         else:
             self.active.handle_swipe(swipe)
