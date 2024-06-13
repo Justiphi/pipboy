@@ -3,7 +3,6 @@ from pypboy.modules.stats import status
 from pypboy.modules.stats import special
 from pypboy.modules.stats import skills
 from pypboy.modules.stats import perks
-from pypboy.modules.stats import general
 import config
 
 if config.GPIO_AVAILABLE:
@@ -19,8 +18,7 @@ class Module(BaseModule):
             status.Module(self),
             special.Module(self),
             skills.Module(self),
-            perks.Module(self),
-            general.Module(self)
+            perks.Module(self)
         ]
         super(Module, self).__init__(*args, **kwargs)
         
