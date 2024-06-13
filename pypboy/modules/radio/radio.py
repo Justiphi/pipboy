@@ -40,7 +40,7 @@ class Module(pypboy.SubModule):
 
     def select_station(self, station):
         if hasattr(self, 'active_station') and self.active_station:
-            self.active_station.stop()
+            self.active_station.pause()
 
         if config.RADIO_PLAYING:
             print("Test")
