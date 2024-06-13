@@ -51,11 +51,11 @@ class BaseModule(game.EntityGroup):
 
     def switch_submodule(self, module):
         if hasattr(self, 'active') and self.active:
+            self.active.handle_action("pause")
             try:
-                self.active.handle_action("pause")
+                self.remove(self.active)
             except:
                 pass
-            self.remove(self.active)
         if len(self.submodules) > module:
             self.active = self.submodules[module]
             self.active.parent = self
