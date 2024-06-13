@@ -146,6 +146,7 @@ class SubModule(game.EntityGroup):
         }
 
         if config.SOUND_ENABLED:
+            print("init sound")
             self.submodule_change_sfx = pygame.mixer.Sound('sounds/submodule_change.ogg')
 
     def handle_action(self, action, value=0):
@@ -164,6 +165,7 @@ class SubModule(game.EntityGroup):
     def handle_resume(self):
         self.paused = False
         if config.SOUND_ENABLED:
+            print("Resume Sound")
             self.submodule_change_sfx.play()
 
     def handle_tap(self):
