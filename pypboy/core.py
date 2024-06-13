@@ -131,14 +131,17 @@ class Pypboy(game.core.Engine):
             self.active.handle_swipe(swipe)
 
     lastModule = ""
+    lastPress = datetime.now()
     def handle_action(self, action):
         if action.startswith('module_'):
             if action != self.lastModule:
                 self.lastModule = action
                 self.switch_module(action[7:])
         elif action.startswith('button'):
+            if self.lastPress > datetime.now():
+                return
+            self.lastPress = datetime.now() + timedelta(milliseconds=250)
             if GPIO.input(5) == False:
-                print(config.RADIO_PLAYING)
                 if config.RADIO_PLAYING:
                     config.RADIO_PLAYING = False
                     config.radio.stop_radio()
