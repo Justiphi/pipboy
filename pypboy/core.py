@@ -66,17 +66,17 @@ class Pypboy(game.core.Engine):
         
     def valueChanged(self, value, direction):
         if self.lastChange > datetime.now():
-            print("skip")
             return
         self.lastChange = datetime.now() + timedelta(milliseconds=250)
 
+        print(self.currentModule)
+        print(config.MODULES["radio"])
         if self.currentModule == config.MODULES["radio"]:
             if direction == "L":
                 self.handle_action("dial_up")
             if direction == "R":
                 self.handle_action("dial_down")
         else:
-            print("knob")
             if direction == "L":
                 self.handle_action("knob_up")
             if direction == "R":
