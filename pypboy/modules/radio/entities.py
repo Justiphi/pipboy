@@ -90,6 +90,18 @@ class DiamondCityRadio(RadioStation):
         self.directory = 'sounds/radio/DCR/'
         super(DiamondCityRadio, self).__init__(self, *args, **kwargs)
 
+class R76(RadioStation):
+    def __init__(self, *args, **kwargs):
+        self.label = 'Radio 76'
+        self.directory = 'sounds/radio/R76/'
+        super(R76, self).__init__(self, *args, **kwargs)
+
+class Playlist(RadioStation):
+    def __init__(self, *args, **kwargs):
+        self.label = 'Radio JustiPhi'
+        self.directory = 'sounds/radio/Playlist/'
+        super(R76, self).__init__(self, *args, **kwargs)
+
 class EnclaveRadio(RadioStation):
     def __init__(self, *args, **kwargs):
         self.label = 'Enclave Radio'
