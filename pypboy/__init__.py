@@ -55,7 +55,7 @@ class BaseModule(game.EntityGroup):
             try:
                 self.remove(self.active)
             except:
-                self.clear()
+                self.__init__(self.pypboy)
         if len(self.submodules) > module:
             self.active = self.submodules[module]
             self.active.parent = self
