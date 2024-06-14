@@ -14,7 +14,7 @@ class Module(pypboy.SubModule):
             entities.DiamondCityRadio(),
             entities.R76(),
             entities.EnclaveRadio(),
-            entities.Playlist
+            entities.Playlist()
             # entities.InstituteRadio(),
             # entities.MinutemenRadio(),
             # entities.Vault101Radio(),

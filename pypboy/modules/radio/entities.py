@@ -100,7 +100,7 @@ class Playlist(RadioStation):
     def __init__(self, *args, **kwargs):
         self.label = 'Radio JustiPhi'
         self.directory = 'sounds/radio/Playlist/'
-        super(R76, self).__init__(self, *args, **kwargs)
+        super(Playlist, self).__init__(self, *args, **kwargs)
 
 class EnclaveRadio(RadioStation):
     def __init__(self, *args, **kwargs):
